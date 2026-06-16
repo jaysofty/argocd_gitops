@@ -1,10 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DevOps Platform</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0b1220;
+      color: #e6e6e6;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    header {
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f1a30;
+      border-bottom: 1px solid #1f2a44;
+    }
+
+    header h2 {
+      color: #4ea1ff;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #ccc;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #4ea1ff;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #ffffff;
+    }
+
+    .hero span {
+      color: #4ea1ff;
+    }
+
+    .hero p {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #b0b8c9;
+    }
+
+    .btn {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #4ea1ff;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #2f8df5;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 60px;
+    }
+
+    .card {
+      background: #111c33;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #1f2a44;
+    }
+
+    .card h3 {
+      color: #4ea1ff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #b0b8c9;
+    }
+
+    /* STATUS BAR */
+    .status {
+      text-align: center;
+      padding: 40px;
+      background: #0f1a30;
+      border-top: 1px solid #1f2a44;
+      border-bottom: 1px solid #1f2a44;
+    }
+
+    .status-box {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background: #111c33;
+      border-radius: 8px;
+      border: 1px solid #1f2a44;
+    }
+
+    .green {
+      color: #3ddc84;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
-  <h1> Enterprise Cloud DevOps Platform</h1>
-  <p>CI/CD + AKS + ArgoCD is working lets goooooo!!!! </p>
+
+  <!-- HEADER -->
+  <header>
+    <h2>CloudOps Platform</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Pipelines</a>
+      <a href="#">Clusters</a>
+      <a href="#">Monitoring</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Enterprise <span>DevOps</span> Platform</h1>
+    <p>CI/CD • Kubernetes • AKS • ArgoCD • Terraform Automation</p>
+    <a class="btn" href="#">View Deployment</a>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="card">
+      <h3>🚀 CI/CD Pipeline</h3>
+      <p>Automated builds, tests, and deployments powered by GitHub Actions and ArgoCD GitOps.</p>
+    </div>
+
+    <div class="card">
+      <h3>☸️ Kubernetes</h3>
+      <p>Scalable container orchestration running on Azure Kubernetes Service (AKS).</p>
+    </div>
+
+    <div class="card">
+      <h3>📦 Container Registry</h3>
+      <p>Secure Docker image storage using Azure Container Registry with RBAC access control.</p>
+    </div>
+
+    <div class="card">
+      <h3>📊 Monitoring</h3>
+      <p>Observability powered by Azure Monitor + Log Analytics Workspace for full visibility.</p>
+    </div>
+  </section>
+
+  <!-- STATUS -->
+  <section class="status">
+    <div class="status-box">
+      Deployment: <span class="green">Active</span>
+    </div>
+    <div class="status-box">
+      AKS Cluster: <span class="green">Running</span>
+    </div>
+    <div class="status-box">
+      ArgoCD Sync: <span class="green">Healthy</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 CloudOps Platform • Built with AKS + GitOps + Terraform
+  </footer>
+
 </body>
 </html>
