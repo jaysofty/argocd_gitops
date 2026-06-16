@@ -1,0 +1,21 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to ACR
+        run: echo "${{ secrets.ACR_PASSWORD }}" | docker login ecdregistry123.azurecr.io -u ${{ secrets.ACR_USERNAME }} --password-stdin
+
+      - name: Build image
+        run: docker build -t ecdregistry123.azurecr.io/nginx-app:latest ./app
+
+      - name: Push image
+        run:  docker push ecdregistry123.azurecr.io/nginx-app:latest
