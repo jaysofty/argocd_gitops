@@ -22,16 +22,16 @@ jobs:
         run: echo "TAG=dev-${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Build image
-        run: docker build -t $REGISTRY/$IMAGE_NAME:$TAG ./app
+        run: docker build -t $REGISTRY/$IMAGE_NAME:${{ env.TAG }} ./app
 
       - name: Push image
-        run: docker push $REGISTRY/$IMAGE_NAME:$TAG
+        run: docker push $REGISTRY/$IMAGE_NAME:${{ env.TAG }}
 
       - name: Tag latest
-        run: docker tag $REGISTRY/$IMAGE_NAME:$TAG $REGISTRY/$IMAGE_NAME:latest
+        run: docker tag $REGISTRY/$IMAGE_NAME:${{ env.TAG }} $REGISTRY/$IMAGE_NAME:latest
 
       - name: Push latest
         run: docker push $REGISTRY/$IMAGE_NAME:latest
 
       - name: Show tag
-        run: echo "Built image with tag $TAG"
+        run: echo "Built image with tag ${{ env.TAG }}"
