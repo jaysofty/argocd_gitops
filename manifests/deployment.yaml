@@ -2,8 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: nginx=ecdregistry123.azurecr.io/nginx-app
+    argocd-image-updater.argoproj.io/nginx.update-strategy: latest
+    argocd-image-updater.argoproj.io/nginx.allow-tags: regexp:^dev-.*
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginx-app
@@ -14,6 +18,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: ecdregistry123.azurecr.io/nginx-app:latest
+          image: ecdregistry123.azurecr.io/nginx-app:dev-initial
           ports:
             - containerPort: 80
